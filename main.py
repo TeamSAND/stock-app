@@ -42,29 +42,30 @@ def my_form_post():
                 "content": test_data
             }
         }
-    print(test_data)
-    response = requests.post(ENDPOINT_URL, headers=HEADERS, json=data)
-    result = response.json()
-    print(result)
-    if 'predictions' in result:
-        sentiment = result["predictions"][0]["sentiment"]
-    else:
-        return " Auth Token Error "
-        # sentiment = 2 
-    # print(sentiment)
-    # sentiment = 0
-    if sentiment is not None and sentiment >= 2:
-        compound1 = "2"
-        sentiment_label = "positive"
-    elif sentiment is not None and sentiment == 1:
-        compound1 = "1"
-        sentiment_label = "Neutral"
-    else:
-        compound1 = "0"
-        sentiment_label = "negative"
+    # print(test_data)
+        response = requests.post(ENDPOINT_URL, headers=HEADERS, json=data)
+        result = response.json()
+        print(result)
+        if 'predictions' in result:
+            sentiment = result["predictions"][0]["sentiment"]
+        else:
+            return " Auth Token Error "
+            # sentiment = 2 
+        # print(sentiment)
+        # sentiment = 0
+        if sentiment is not None and sentiment >= 2:
+            compound1 = "2"
+            sentiment_label = "positive"
+        elif sentiment is not None and sentiment == 1:
+            compound1 = "1"
+            sentiment_label = "Neutral"
+        else:
+            compound1 = "0"
+            sentiment_label = "negative"
 
-    return render_template('form.html', final=compound1, test_data=test_data, sentiment=sentiment_label)
-
+        return render_template('form.html', final=compound1, test_data=test_data, sentiment=sentiment_label)
+    
+    return "No data Exist for the given Company" 
 
 # @app.route('/news/latest')
 
