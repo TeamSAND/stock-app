@@ -1,11 +1,49 @@
 
+body {
+  margin-top: 0;
+  padding: 0%;
+}
 .input-field {
-    width: 800px;
-    height: 200px;
-    
-  }
-  
-  
+  width: 70%;
+  height: 100px;
+  padding: 10px;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  resize: vertical;
+  margin-bottom: 20px;
+}
+
+.input-field:hover,
+.input-field:focus {
+  border-color: #999;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.notification h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.notification p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
   .btn-submit {
 
   background: #0066A2;
