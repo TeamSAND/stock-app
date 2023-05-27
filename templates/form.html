@@ -4,17 +4,19 @@
     <title>sentiment analysis</title>
     <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
   </head>
   <body align="center" style="background-image: url(/static/news1.png);margin-top: 250px;">
     <h1>Stock Market Sentiment Analyzer</h1>
-    <h3>Enter Text:</h3>
+    <h3>Enter Company Name :</h3>
     <form method="POST" >
       <input type="text" name="test_data" class="input-field" >
       <input type="submit" value="Submit" class="btn-submit">
     </form>
 
     {% if final is defined %}
+      <div id="notification" class="notification">
         <h3>Sentiment is:</h3>
       <p>{{ final }}</p>
       {% if sentiment == "positive" %}
@@ -26,7 +28,10 @@
       {% else %}
         <h3>Sentiment Result:</h3>
         <p>Neutral</p>
+
       {% endif %}
+      <button id="closeButton">Close</button>
+      </div>
     {% endif %}
 
 
