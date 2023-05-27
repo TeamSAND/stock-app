@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='static')
 
 ENDPOINT_URL = "https://us-central1-aiplatform.googleapis.com/ui/projects/my-finsent-model/locations/us-central1/endpoints/205806586487111680:predict"
 HEADERS = {
-    "Authorization": "Bearer ya29.a0AWY7CkkJLMPAHU3hIX1wXuMoBh6IISNDVJwnCV0Lyzs1OwQHXiXnN-_dKlpiEx4zEI98_sM723nUadTem_1OcfwmuYcmcB3etEaYLibtlqkI-xIN-Txs40PDhpfAsIo4ETekRwAmW_UteA233FjIjIxfTRuKxu4SO0WhaCgYKAb0SARASFQG1tDrptNC7FcXV1_DrMnl-E5z9YA0171",
+    "Authorization": "Bearer ya29.a0AWY7CkkMaHym62q5xeXomlhcWSxbcNpIlTMn-YYJvxtVVfTzN7Tjp1rrv8hEV1R7bPpHI1qWR9SRhWQEyAUfRXkl_Oe2JhIdwglExnn0vqNGT4Tw4_Amic3UP66CraKypemSPlCXUn11xUu4fZirYQJTd1WVh6luaA5aaCgYKAa0SARASFQG1tDrpKEwvSCllKa5f1f5N1Ob8wg0171",
     "Content-Type": "application/json"
 }
 
@@ -64,8 +64,8 @@ def my_form_post():
             sentiment_label = "negative"
 
         return render_template('form.html', final=compound1, test_data=test_data, sentiment=sentiment_label)
-    
-    return "No data Exist for the given Company" 
+    # sentiment_label = " No Company News Found "
+    return render_template('home.html') 
 
 # @app.route('/news/latest')
 
