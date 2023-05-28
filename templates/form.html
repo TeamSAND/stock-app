@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Sentiment Analysis</title>
+    <title> Finsent </title>
     <style>
       body {
         background-image: url(/static/news1.png);
@@ -54,6 +54,7 @@
         border-radius: 4px;
         background-color: #f0f0f0;
         margin-bottom: 20px;
+        color:black
       }
 
       #closeButton {
@@ -69,10 +70,22 @@
       #closeButton:hover {
         background-color: #d32f2f;
       }
+      a {
+        text-decoration:none;
+      }
+      
     </style>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </head>
+  <div class="topnav" id="myTopnav">
+    
+    <a href="/about">About Us </a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
   <body align="center">
+    
     <h1>Stock Market Sentiment Analyzer</h1>
     <h3>Enter Company Name:</h3>
     <form method="POST">

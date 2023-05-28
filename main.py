@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='static')
 
 ENDPOINT_URL = "https://us-central1-aiplatform.googleapis.com/ui/projects/my-finsent-model/locations/us-central1/endpoints/205806586487111680:predict"
 HEADERS = {
-    "Authorization": "Bearer ya29.a0AWY7CkkMaHym62q5xeXomlhcWSxbcNpIlTMn-YYJvxtVVfTzN7Tjp1rrv8hEV1R7bPpHI1qWR9SRhWQEyAUfRXkl_Oe2JhIdwglExnn0vqNGT4Tw4_Amic3UP66CraKypemSPlCXUn11xUu4fZirYQJTd1WVh6luaA5aaCgYKAa0SARASFQG1tDrpKEwvSCllKa5f1f5N1Ob8wg0171",
+    "Authorization": "Bearer ya29.a0AWY7CknGLgZBGgRxvEGe_V3130ETlvQ0g6KvtAPG3W7fd8TcXZX7yUr7a-ekBTGVe4Hri5DDSAWhGW3kRgA-BkE99VrZRC0PXQ6dpz-FpStmulBPkGNPqMaFErEDtt7tVGzr4MkEP3KNAcrORdJh_PwSRlB2tJEsY0A0aCgYKAXcSARASFQG1tDrpO4twgOluR6S6JGlbWPHgcg0171",
     "Content-Type": "application/json"
 }
 
@@ -24,7 +24,9 @@ def fetch_latest_news(company):
         return latest_news
     else:
         return None
-    
+@app.route('/about')
+def about():
+    return render_template('about.html')   
 @app.route('/')
 def my_form():
     return render_template('form.html')
