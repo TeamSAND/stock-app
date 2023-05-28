@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='static')
 
 ENDPOINT_URL = "https://us-central1-aiplatform.googleapis.com/ui/projects/my-finsent-model/locations/us-central1/endpoints/205806586487111680:predict"
 HEADERS = {
-    "Authorization": "Bearer ya29.a0AWY7CknGLgZBGgRxvEGe_V3130ETlvQ0g6KvtAPG3W7fd8TcXZX7yUr7a-ekBTGVe4Hri5DDSAWhGW3kRgA-BkE99VrZRC0PXQ6dpz-FpStmulBPkGNPqMaFErEDtt7tVGzr4MkEP3KNAcrORdJh_PwSRlB2tJEsY0A0aCgYKAXcSARASFQG1tDrpO4twgOluR6S6JGlbWPHgcg0171",
+    "Authorization": "Bearer ya29.a0AWY7Cknrb-RU-ncQXZm2-R1dlA04JCwZrMhsF0Rgyt38uHmszmsNi_BI8hYLfP-YVrMhl2onCPLYjeqxN1q9rdUZkkQ2OIhWi2NpacN0pBr9vtRpGCCfcBZDBF7bk6i20PAlxaz_p9vZppkPZiWr7It84CHEZTmM4dMFaCgYKAVsSARASFQG1tDrpQ-fDurPg8aMVVm966XAA3g0171",
     "Content-Type": "application/json"
 }
 
