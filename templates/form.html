@@ -1,42 +1,101 @@
 <!doctype html>
 <html>
   <head>
-    <title>sentiment analysis</title>
-    <link rel="stylesheet" type="text/css" href="">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Sentiment Analysis</title>
+    <style>
+      body {
+        background-image: url(/static/news1.png);
+        background-size: cover;
+        margin-top: 250px;
+        font-family: Arial, sans-serif;
+        color: #fff;
+      }
 
+      h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        color : black ;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color:red;
+      }
+
+      form {
+        margin-bottom: 30px;
+      }
+
+      .input-field {
+        padding: 8px 12px;
+        border: 2px solid black;
+        border-radius: 4px;
+        font-size: 16px;
+        width: 250px;
+      }
+
+      .button-85 {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .button-85:hover {
+        background-color: #45a049;
+      }
+
+      .notification {
+        padding: 20px;
+        border-radius: 4px;
+        background-color: #f0f0f0;
+        margin-bottom: 20px;
+      }
+
+      #closeButton {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #f44336;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #closeButton:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </head>
-  <body align="center" style="background-image: url(/static/news1.png);margin-top: 250px;">
+  <body align="center">
     <h1>Stock Market Sentiment Analyzer</h1>
-    <h3>Enter Company Name :</h3>
-    <form method="POST" >
-      <input type="text" name="test_data" class="input-field" >
+    <h3>Enter Company Name:</h3>
+    <form method="POST">
+      <input type="text" name="test_data" class="input-field">
       <input type="submit" value="Submit" class="button-85">
     </form>
 
     {% if final is defined %}
-      <div id="notification" class="notification">
-        <h3>Sentiment is:</h3>
+    <div id="notification" class="notification">
+      <h3>Sentiment is:</h3>
       <p>{{ final }}</p>
       {% if sentiment == "positive" %}
-        <h3>Sentiment Result:</h3>
-        <p>Positive</p>
+      <h3>Sentiment Result:</h3>
+      <p>Positive</p>
       {% elif sentiment == "negative" %}
-        <h3>Sentiment Result:</h3>
-        <p>Negative</p>
+      <h3>Sentiment Result:</h3>
+      <p>Negative</p>
       {% else %}
-        <h3>Sentiment Result:</h3>
-        <p>Neutral</p>
-
+      <h3>Sentiment Result:</h3>
+      <p>Neutral</p>
       {% endif %}
       <button id="closeButton">Close</button>
-      </div>
+    </div>
     {% endif %}
-
-
   </body>
 </html>
-
-
-

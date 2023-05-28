@@ -49,7 +49,7 @@ def my_form_post():
         if 'predictions' in result:
             sentiment = result["predictions"][0]["sentiment"]
         else:
-            return " Auth Token Error "
+            return render_template('autherror.html')
             # sentiment = 2 
         # print(sentiment)
         # sentiment = 0
